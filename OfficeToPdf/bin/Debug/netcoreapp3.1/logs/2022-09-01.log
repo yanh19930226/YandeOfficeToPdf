@@ -1,0 +1,81 @@
+2022-09-01 14:24:42.0201|ERROR|OfficeToPdf.Program|None of the specified endpoints were reachable
+2022-09-01 14:26:14.5347|ERROR|OfficeToPdf.Program|None of the specified endpoints were reachable
+2022-09-01 14:27:59.1076|INFO|OfficeToPdf.Program|RabbitMQ连接成功。
+2022-09-01 14:27:59.2783|INFO|OfficeToPdf.Program|RabbitMQ消息接收中...
+2022-09-01 14:31:05.1023|INFO|OfficeToPdf.Program|RabbitMQ连接成功。
+2022-09-01 14:31:05.1255|INFO|OfficeToPdf.Program|RabbitMQ消息接收中...
+2022-09-01 14:33:58.9765|INFO|OfficeToPdf.Program|RabbitMQ连接成功。
+2022-09-01 14:33:59.0122|INFO|OfficeToPdf.Program|RabbitMQ消息接收中...
+2022-09-01 14:35:15.6499|ERROR|OfficeToPdf.OfficeConverter|文件ID：6e878093-36ce-4f50-9e9b-1301d3d099d4，不存在
+2022-09-01 14:35:18.7838|INFO|OfficeToPdf.OfficeConverter|文件原路径：D:\MyPlayground\office2pdf\OfficeToPdf\bin\Debug\netcoreapp3.1\6e878093-36ce-4f50-9e9b-1301d3d099d4.xls
+2022-09-01 14:35:20.3930|INFO|OfficeToPdf.OfficeConverter|文件目标路径：D:\MyPlayground\office2pdf\OfficeToPdf\bin\Debug\netcoreapp3.1\6e878093-36ce-4f50-9e9b-1301d3d099d4.pdf
+2022-09-01 14:35:24.7626|ERROR|OfficeToPdf.OfficeConverter|Error Message:Object reference not set to an instance of an object.,StackTrace:   at NPOI.POIFS.FileSystem.NPOIFSFileSystem.CloseInputStream(Stream stream, Boolean success)
+   at NPOI.POIFS.FileSystem.NPOIFSFileSystem..ctor(Stream stream)
+   at OfficeToPdf.OfficeConverter.SetExcelScale(Stream sourceStream, String outPath) in D:\MyPlayground\office2pdf\OfficeToPdf\OfficeConverter.cs:line 102
+   at OfficeToPdf.OfficeConverter.OnWork(Messages message) in D:\MyPlayground\office2pdf\OfficeToPdf\OfficeConverter.cs:line 187
+2022-09-01 14:35:26.6222|INFO|OfficeToPdf.OfficeConverter|---------------没有找到目标路径------------------
+2022-09-01 14:35:26.6652|INFO|OfficeToPdf.Program|接受文件信息：{"FileName":"2MX2O3QZIBJ7713X.xls","FileId":"6e878093-36ce-4f50-9e9b-1301d3d099d4","Md5":"","Length":25088,"UploadDateTime":"2022-09-01T14:26:00.3439453+08:00"}
+2022-09-01 14:39:16.4272|ERROR|OfficeToPdf.OfficeConverter|文件ID：29f31cd2-23aa-4f6e-87bb-f689de0455b0，不存在
+2022-09-01 14:39:16.4272|INFO|OfficeToPdf.OfficeConverter|文件原路径：D:\MyPlayground\office2pdf\OfficeToPdf\bin\Debug\netcoreapp3.1\29f31cd2-23aa-4f6e-87bb-f689de0455b0.xls
+2022-09-01 14:39:16.4272|INFO|OfficeToPdf.OfficeConverter|文件目标路径：D:\MyPlayground\office2pdf\OfficeToPdf\bin\Debug\netcoreapp3.1\29f31cd2-23aa-4f6e-87bb-f689de0455b0.pdf
+2022-09-01 14:39:17.3489|ERROR|OfficeToPdf.OfficeConverter|Error Message:Object reference not set to an instance of an object.,StackTrace:   at NPOI.POIFS.FileSystem.NPOIFSFileSystem.CloseInputStream(Stream stream, Boolean success)
+   at NPOI.POIFS.FileSystem.NPOIFSFileSystem..ctor(Stream stream)
+   at OfficeToPdf.OfficeConverter.SetExcelScale(Stream sourceStream, String outPath) in D:\MyPlayground\office2pdf\OfficeToPdf\OfficeConverter.cs:line 102
+   at OfficeToPdf.OfficeConverter.OnWork(Messages message) in D:\MyPlayground\office2pdf\OfficeToPdf\OfficeConverter.cs:line 187
+2022-09-01 14:39:17.3489|INFO|OfficeToPdf.OfficeConverter|---------------没有找到目标路径------------------
+2022-09-01 14:39:17.3489|INFO|OfficeToPdf.Program|接受文件信息：{"FileName":"2MX2O3QZIBJ7713X.xls","FileId":"29f31cd2-23aa-4f6e-87bb-f689de0455b0","Md5":"","Length":25088,"UploadDateTime":"2022-09-01T14:26:09.0786799+08:00"}
+2022-09-01 14:39:20.7815|ERROR|OfficeToPdf.OfficeConverter|文件ID：29f31cd2-23aa-4f6e-87bb-f689de0455b0，不存在
+2022-09-01 14:39:20.7836|INFO|OfficeToPdf.OfficeConverter|文件原路径：D:\MyPlayground\office2pdf\OfficeToPdf\bin\Debug\netcoreapp3.1\29f31cd2-23aa-4f6e-87bb-f689de0455b0.xls
+2022-09-01 14:39:20.7836|INFO|OfficeToPdf.OfficeConverter|文件目标路径：D:\MyPlayground\office2pdf\OfficeToPdf\bin\Debug\netcoreapp3.1\29f31cd2-23aa-4f6e-87bb-f689de0455b0.pdf
+2022-09-01 14:39:27.2670|INFO|OfficeToPdf.Program|RabbitMQ连接成功。
+2022-09-01 14:39:27.2917|INFO|OfficeToPdf.Program|RabbitMQ消息接收中...
+2022-09-01 14:41:31.4608|ERROR|OfficeToPdf.OfficeConverter|文件ID：29f31cd2-23aa-4f6e-87bb-f689de0455b0，不存在
+2022-09-01 14:41:31.4608|INFO|OfficeToPdf.OfficeConverter|文件原路径：D:\MyPlayground\office2pdf\OfficeToPdf\bin\Debug\netcoreapp3.1\29f31cd2-23aa-4f6e-87bb-f689de0455b0.xls
+2022-09-01 14:41:31.4608|INFO|OfficeToPdf.OfficeConverter|文件目标路径：D:\MyPlayground\office2pdf\OfficeToPdf\bin\Debug\netcoreapp3.1\29f31cd2-23aa-4f6e-87bb-f689de0455b0.pdf
+2022-09-01 14:41:37.0994|ERROR|OfficeToPdf.OfficeConverter|Error Message:Object reference not set to an instance of an object.,StackTrace:   at NPOI.POIFS.FileSystem.NPOIFSFileSystem.CloseInputStream(Stream stream, Boolean success)
+   at NPOI.POIFS.FileSystem.NPOIFSFileSystem..ctor(Stream stream)
+   at OfficeToPdf.OfficeConverter.SetExcelScale(Stream sourceStream, String outPath) in D:\MyPlayground\office2pdf\OfficeToPdf\OfficeConverter.cs:line 102
+   at OfficeToPdf.OfficeConverter.OnWork(Messages message) in D:\MyPlayground\office2pdf\OfficeToPdf\OfficeConverter.cs:line 187
+2022-09-01 14:41:37.0994|INFO|OfficeToPdf.OfficeConverter|---------------没有找到目标路径------------------
+2022-09-01 14:41:37.1229|INFO|OfficeToPdf.Program|接受文件信息：{"FileName":"2MX2O3QZIBJ7713X.xls","FileId":"29f31cd2-23aa-4f6e-87bb-f689de0455b0","Md5":"","Length":25088,"UploadDateTime":"2022-09-01T14:26:09.0786799+08:00"}
+2022-09-01 14:53:17.1345|INFO|OfficeToPdf.Program|RabbitMQ连接成功。
+2022-09-01 14:53:17.1604|INFO|OfficeToPdf.Program|RabbitMQ消息接收中...
+2022-09-01 14:53:23.1871|ERROR|OfficeToPdf.OfficeConverter|文件ID：5d4c21e7-94f3-4ae7-910b-5d7e8115a7ed，不存在
+2022-09-01 14:53:23.1871|INFO|OfficeToPdf.OfficeConverter|文件原路径：D:\MyPlayground\office2pdf\OfficeToPdf\bin\Debug\netcoreapp3.1\5d4c21e7-94f3-4ae7-910b-5d7e8115a7ed.xls
+2022-09-01 14:53:23.1899|INFO|OfficeToPdf.OfficeConverter|文件目标路径：D:\MyPlayground\office2pdf\OfficeToPdf\bin\Debug\netcoreapp3.1\5d4c21e7-94f3-4ae7-910b-5d7e8115a7ed.pdf
+2022-09-01 14:53:24.2298|ERROR|OfficeToPdf.OfficeConverter|Error Message:Object reference not set to an instance of an object.,StackTrace:   at NPOI.POIFS.FileSystem.NPOIFSFileSystem.CloseInputStream(Stream stream, Boolean success)
+   at NPOI.POIFS.FileSystem.NPOIFSFileSystem..ctor(Stream stream)
+   at OfficeToPdf.OfficeConverter.SetExcelScale(Stream sourceStream, String outPath) in D:\MyPlayground\office2pdf\OfficeToPdf\OfficeConverter.cs:line 102
+   at OfficeToPdf.OfficeConverter.OnWork(Messages message) in D:\MyPlayground\office2pdf\OfficeToPdf\OfficeConverter.cs:line 187
+2022-09-01 14:53:24.2298|INFO|OfficeToPdf.OfficeConverter|---------------没有找到目标路径------------------
+2022-09-01 14:53:24.2535|INFO|OfficeToPdf.Program|接受文件信息：{"FileName":"2MX2O3QZIBJ7713X.xls","FileId":"5d4c21e7-94f3-4ae7-910b-5d7e8115a7ed","Md5":"","Length":25088,"UploadDateTime":"2022-09-01T14:38:37.016028+08:00"}
+2022-09-01 14:55:31.1268|INFO|OfficeToPdf.OfficeConverter|文件原路径：D:\MyPlayground\office2pdf\OfficeToPdf\bin\Debug\netcoreapp3.1\63105712e47a8113f7137121.xls
+2022-09-01 14:55:31.8060|INFO|OfficeToPdf.OfficeConverter|文件目标路径：D:\MyPlayground\office2pdf\OfficeToPdf\bin\Debug\netcoreapp3.1\63105712e47a8113f7137121.pdf
+2022-09-01 14:55:59.6211|INFO|OfficeToPdf.OfficeConverter|stream.length:25088
+2022-09-01 14:55:59.6325|INFO|OfficeToPdf.OfficeConverter|读取源文件到本地成功
+2022-09-01 14:56:30.4535|ERROR|OfficeToPdf.OfficeConverter|Error Message:系统找不到指定的文件。,StackTrace:   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start()
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at OfficeToPdf.OfficeConverter.OnWork(Messages message) in D:\MyPlayground\office2pdf\OfficeToPdf\OfficeConverter.cs:line 205
+2022-09-01 14:56:30.4554|INFO|OfficeToPdf.OfficeConverter|---------------没有找到目标路径------------------
+2022-09-01 14:56:30.4554|INFO|OfficeToPdf.Program|接受文件信息：{"FileName":"2MX2O3QZIBJ7713X.xls","FileId":"63105712e47a8113f7137121","Md5":"3c5d5d3627b8bff8a596f8f9a8812e5f","Length":25088,"UploadDateTime":"2022-09-01T06:54:10.701Z"}
+2022-09-01 14:58:13.7634|INFO|OfficeToPdf.OfficeConverter|文件原路径：D:\MyPlayground\office2pdf\OfficeToPdf\bin\Debug\netcoreapp3.1\63105712e47a8113f7137121.xls
+2022-09-01 14:58:13.8073|INFO|OfficeToPdf.OfficeConverter|文件目标路径：D:\MyPlayground\office2pdf\OfficeToPdf\bin\Debug\netcoreapp3.1\63105712e47a8113f7137121.pdf
+2022-09-01 14:58:18.0663|INFO|OfficeToPdf.OfficeConverter|stream.length:25088
+2022-09-01 14:58:18.0663|INFO|OfficeToPdf.OfficeConverter|读取源文件到本地成功
+2022-09-01 14:58:18.0865|ERROR|OfficeToPdf.OfficeConverter|Error Message:系统找不到指定的文件。,StackTrace:   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start()
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at OfficeToPdf.OfficeConverter.OnWork(Messages message) in D:\MyPlayground\office2pdf\OfficeToPdf\OfficeConverter.cs:line 205
+2022-09-01 14:58:18.0865|INFO|OfficeToPdf.OfficeConverter|---------------没有找到目标路径------------------
+2022-09-01 14:58:18.0865|INFO|OfficeToPdf.Program|接受文件信息：{"FileName":"2MX2O3QZIBJ7713X.xls","FileId":"63105712e47a8113f7137121","Md5":"3c5d5d3627b8bff8a596f8f9a8812e5f","Length":25088,"UploadDateTime":"2022-09-01T06:54:10.701Z"}
+2022-09-01 14:59:23.5631|INFO|OfficeToPdf.OfficeConverter|文件原路径：D:\MyPlayground\office2pdf\OfficeToPdf\bin\Debug\netcoreapp3.1\63105712e47a8113f7137121.xls
+2022-09-01 14:59:23.5650|INFO|OfficeToPdf.OfficeConverter|文件目标路径：D:\MyPlayground\office2pdf\OfficeToPdf\bin\Debug\netcoreapp3.1\63105712e47a8113f7137121.pdf
+2022-09-01 14:59:23.7628|INFO|OfficeToPdf.OfficeConverter|stream.length:25088
+2022-09-01 14:59:23.7628|INFO|OfficeToPdf.OfficeConverter|读取源文件到本地成功
+2022-09-01 14:59:23.7835|ERROR|OfficeToPdf.OfficeConverter|Error Message:系统找不到指定的文件。,StackTrace:   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start()
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at OfficeToPdf.OfficeConverter.OnWork(Messages message) in D:\MyPlayground\office2pdf\OfficeToPdf\OfficeConverter.cs:line 205
+2022-09-01 14:59:23.7835|INFO|OfficeToPdf.OfficeConverter|---------------没有找到目标路径------------------
+2022-09-01 14:59:23.7835|INFO|OfficeToPdf.Program|接受文件信息：{"FileName":"2MX2O3QZIBJ7713X.xls","FileId":"63105712e47a8113f7137121","Md5":"3c5d5d3627b8bff8a596f8f9a8812e5f","Length":25088,"UploadDateTime":"2022-09-01T06:54:10.701Z"}

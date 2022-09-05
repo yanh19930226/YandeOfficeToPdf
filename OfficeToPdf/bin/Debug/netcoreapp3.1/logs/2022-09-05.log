@@ -1,0 +1,63 @@
+2022-09-05 13:08:48.0813|INFO|OfficeToPdf.Program|RabbitMQ连接成功。
+2022-09-05 13:08:48.1205|INFO|OfficeToPdf.Program|RabbitMQ消息接收中...
+2022-09-05 13:09:54.1891|INFO|OfficeToPdf.OfficeConverter|文件原路径：D:\MyPlayground\office2pdf\OfficeToPdf\bin\Debug\netcoreapp3.1\6315838f521f62c33913c108.xls
+2022-09-05 13:09:54.4992|INFO|OfficeToPdf.OfficeConverter|文件目标路径：D:\MyPlayground\office2pdf\OfficeToPdf\bin\Debug\netcoreapp3.1\6315838f521f62c33913c108.pdf
+2022-09-05 13:09:56.3583|INFO|OfficeToPdf.OfficeConverter|stream.length:25088
+2022-09-05 13:09:56.3583|INFO|OfficeToPdf.OfficeConverter|读取源文件到本地成功
+2022-09-05 13:09:57.6826|ERROR|OfficeToPdf.OfficeConverter|Error Message:系统找不到指定的文件。,StackTrace:   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start()
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at OfficeToPdf.OfficeConverter.OnWork(Messages message) in D:\MyPlayground\office2pdf\OfficeToPdf\OfficeConverter.cs:line 205
+2022-09-05 13:09:57.6826|INFO|OfficeToPdf.OfficeConverter|---------------没有找到目标路径------------------
+2022-09-05 13:09:57.7054|INFO|OfficeToPdf.Program|接受文件信息：{"FileName":"2MX2O3QZIBJ7713X.xls","FileId":"6315838f521f62c33913c108","Md5":"3c5d5d3627b8bff8a596f8f9a8812e5f","Length":25088,"UploadDateTime":"2022-09-05T05:05:20.145Z"}
+2022-09-05 13:11:47.9663|INFO|OfficeToPdf.OfficeConverter|文件原路径：D:\MyPlayground\office2pdf\OfficeToPdf\bin\Debug\netcoreapp3.1\6315838f521f62c33913c108.xls
+2022-09-05 13:11:47.9663|INFO|OfficeToPdf.OfficeConverter|文件目标路径：D:\MyPlayground\office2pdf\OfficeToPdf\bin\Debug\netcoreapp3.1\6315838f521f62c33913c108.pdf
+2022-09-05 13:11:48.1919|INFO|OfficeToPdf.OfficeConverter|stream.length:25088
+2022-09-05 13:11:48.1919|INFO|OfficeToPdf.OfficeConverter|读取源文件到本地成功
+2022-09-05 13:11:48.2100|ERROR|OfficeToPdf.OfficeConverter|Error Message:系统找不到指定的文件。,StackTrace:   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start()
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at OfficeToPdf.OfficeConverter.OnWork(Messages message) in D:\MyPlayground\office2pdf\OfficeToPdf\OfficeConverter.cs:line 205
+2022-09-05 13:11:48.2100|INFO|OfficeToPdf.OfficeConverter|---------------没有找到目标路径------------------
+2022-09-05 13:11:48.2100|INFO|OfficeToPdf.Program|接受文件信息：{"FileName":"2MX2O3QZIBJ7713X.xls","FileId":"6315838f521f62c33913c108","Md5":"3c5d5d3627b8bff8a596f8f9a8812e5f","Length":25088,"UploadDateTime":"2022-09-05T05:05:20.145Z"}
+2022-09-05 13:47:48.4255|INFO|OfficeToPdf.Program|RabbitMQ连接成功。
+2022-09-05 13:47:48.4508|INFO|OfficeToPdf.Program|RabbitMQ消息接收中...
+2022-09-05 13:47:52.1046|INFO|OfficeToPdf.OfficeConverter|文件原路径：D:\MyPlayground\office2pdf\OfficeToPdf\bin\Debug\netcoreapp3.1\6315838f521f62c33913c108.xls/files
+2022-09-05 13:47:52.1046|INFO|OfficeToPdf.OfficeConverter|文件目标路径：D:\MyPlayground\office2pdf\OfficeToPdf\bin\Debug\netcoreapp3.1\6315838f521f62c33913c108.pdf/files
+2022-09-05 13:47:52.5520|ERROR|OfficeToPdf.OfficeConverter|Error Message:Wrong Local header signature: 0xE011CFD0,StackTrace:   at ICSharpCode.SharpZipLib.Zip.ZipInputStream.GetNextEntry()
+   at NPOI.OpenXml4Net.Util.ZipInputStreamZipEntrySource..ctor(ZipInputStream inp)
+   at NPOI.OpenXml4Net.OPC.ZipPackage..ctor(Stream in1, PackageAccess access)
+   at NPOI.OpenXml4Net.OPC.OPCPackage.Open(Stream in1)
+   at NPOI.Util.PackageHelper.Open(Stream is1)
+   at NPOI.XSSF.UserModel.XSSFWorkbook..ctor(Stream is1)
+   at OfficeToPdf.OfficeConverter.SetExcelScale(Stream sourceStream, String outPath) in D:\MyPlayground\office2pdf\OfficeToPdf\OfficeConverter.cs:line 107
+   at OfficeToPdf.OfficeConverter.OnWork(Messages message) in D:\MyPlayground\office2pdf\OfficeToPdf\OfficeConverter.cs:line 201
+2022-09-05 13:47:52.5520|INFO|OfficeToPdf.OfficeConverter|---------------没有找到目标路径------------------
+2022-09-05 13:47:52.5744|INFO|OfficeToPdf.Program|接受文件信息：{"FileName":"2MX2O3QZIBJ7713X.xls","FileId":"6315838f521f62c33913c108","Md5":"3c5d5d3627b8bff8a596f8f9a8812e5f","Length":25088,"UploadDateTime":"2022-09-05T05:05:20.145Z"}
+2022-09-05 13:48:05.8379|INFO|OfficeToPdf.OfficeConverter|文件原路径：D:\MyPlayground\office2pdf\OfficeToPdf\bin\Debug\netcoreapp3.1\6315838f521f62c33913c108.xls/files
+2022-09-05 13:48:05.8379|INFO|OfficeToPdf.OfficeConverter|文件目标路径：D:\MyPlayground\office2pdf\OfficeToPdf\bin\Debug\netcoreapp3.1\6315838f521f62c33913c108.pdf/files
+2022-09-05 13:48:06.0524|ERROR|OfficeToPdf.OfficeConverter|Error Message:Wrong Local header signature: 0xE011CFD0,StackTrace:   at ICSharpCode.SharpZipLib.Zip.ZipInputStream.GetNextEntry()
+   at NPOI.OpenXml4Net.Util.ZipInputStreamZipEntrySource..ctor(ZipInputStream inp)
+   at NPOI.OpenXml4Net.OPC.ZipPackage..ctor(Stream in1, PackageAccess access)
+   at NPOI.OpenXml4Net.OPC.OPCPackage.Open(Stream in1)
+   at NPOI.Util.PackageHelper.Open(Stream is1)
+   at NPOI.XSSF.UserModel.XSSFWorkbook..ctor(Stream is1)
+   at OfficeToPdf.OfficeConverter.SetExcelScale(Stream sourceStream, String outPath) in D:\MyPlayground\office2pdf\OfficeToPdf\OfficeConverter.cs:line 107
+   at OfficeToPdf.OfficeConverter.OnWork(Messages message) in D:\MyPlayground\office2pdf\OfficeToPdf\OfficeConverter.cs:line 201
+2022-09-05 13:48:06.0524|INFO|OfficeToPdf.OfficeConverter|---------------没有找到目标路径------------------
+2022-09-05 13:48:06.0524|INFO|OfficeToPdf.Program|接受文件信息：{"FileName":"2MX2O3QZIBJ7713X.xls","FileId":"6315838f521f62c33913c108","Md5":"3c5d5d3627b8bff8a596f8f9a8812e5f","Length":25088,"UploadDateTime":"2022-09-05T05:05:20.145Z"}
+2022-09-05 13:49:28.9821|INFO|OfficeToPdf.Program|RabbitMQ连接成功。
+2022-09-05 13:49:29.0148|INFO|OfficeToPdf.Program|RabbitMQ消息接收中...
+2022-09-05 13:49:48.2785|INFO|OfficeToPdf.Program|RabbitMQ连接成功。
+2022-09-05 13:49:48.3156|INFO|OfficeToPdf.Program|RabbitMQ消息接收中...
+2022-09-05 13:50:20.3765|INFO|OfficeToPdf.Program|RabbitMQ连接成功。
+2022-09-05 13:50:20.4160|INFO|OfficeToPdf.Program|RabbitMQ消息接收中...
+2022-09-05 13:50:25.4090|INFO|OfficeToPdf.OfficeConverter|文件原路径：D:\MyPlayground\office2pdf\OfficeToPdf\bin\Debug\netcoreapp3.1\files\6315838f521f62c33913c108.xls
+2022-09-05 13:50:25.7468|INFO|OfficeToPdf.OfficeConverter|文件目标路径：D:\MyPlayground\office2pdf\OfficeToPdf\bin\Debug\netcoreapp3.1\files\6315838f521f62c33913c108.pdf
+2022-09-05 13:50:27.1582|INFO|OfficeToPdf.OfficeConverter|stream.length:25088
+2022-09-05 13:50:27.1753|ERROR|OfficeToPdf.OfficeConverter|读取源文件到本地失败：Could not find a part of the path 'D:\MyPlayground\office2pdf\OfficeToPdf\bin\Debug\netcoreapp3.1\files\6315838f521f62c33913c108.xls'.
+2022-09-05 13:50:30.9211|INFO|OfficeToPdf.OfficeConverter|---------------没有找到目标路径------------------
+2022-09-05 13:50:37.8521|INFO|OfficeToPdf.Program|接受文件信息：{"FileName":"2MX2O3QZIBJ7713X.xls","FileId":"6315838f521f62c33913c108","Md5":"3c5d5d3627b8bff8a596f8f9a8812e5f","Length":25088,"UploadDateTime":"2022-09-05T05:05:20.145Z"}
+2022-09-05 13:51:43.6148|INFO|OfficeToPdf.Program|RabbitMQ连接成功。
+2022-09-05 13:51:43.6424|INFO|OfficeToPdf.Program|RabbitMQ消息接收中...
+2022-09-05 13:52:11.0053|INFO|OfficeToPdf.OfficeConverter|文件原路径：D:\MyPlayground\office2pdf\OfficeToPdf\bin\Debug\netcoreapp3.1\files\6315838f521f62c33913c108.xls

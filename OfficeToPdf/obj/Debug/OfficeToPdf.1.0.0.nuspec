@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>OfficeToPdf</id>
+    <version>1.0.0</version>
+    <authors>OfficeToPdf</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework=".NETCoreApp3.1">
+        <dependency id="Microsoft.Extensions.Configuration.Json" version="3.1.28" exclude="Build,Analyzers" />
+        <dependency id="MongoDB.Driver.GridFS" version="2.7.2" exclude="Build,Analyzers" />
+        <dependency id="MySql.Data" version="8.0.20" exclude="Build,Analyzers" />
+        <dependency id="NLog.Extensions.Logging" version="1.3.0" exclude="Build,Analyzers" />
+        <dependency id="NPOI" version="2.5.2" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="12.0.3" exclude="Build,Analyzers" />
+        <dependency id="RabbitMQ.Client" version="5.1.2" exclude="Build,Analyzers" />
+        <dependency id="System.Configuration.ConfigurationManager" version="4.7.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <contentFiles>
+      <files include="any/netcoreapp3.1/env.json" buildAction="Content" />
+    </contentFiles>
+  </metadata>
+  <files>
+    <file src="D:\MyPlayground\office2pdf\OfficeToPdf\bin\Debug\netcoreapp3.1\OfficeToPdf.runtimeconfig.json" target="lib\netcoreapp3.1\OfficeToPdf.runtimeconfig.json" />
+    <file src="D:\MyPlayground\office2pdf\OfficeToPdf\bin\Debug\netcoreapp3.1\OfficeToPdf.dll" target="lib\netcoreapp3.1\OfficeToPdf.dll" />
+    <file src="D:\MyPlayground\office2pdf\OfficeToPdf\env.json" target="content\env.json" />
+    <file src="D:\MyPlayground\office2pdf\OfficeToPdf\env.json" target="contentFiles\any\netcoreapp3.1\env.json" />
+  </files>
+</package>
