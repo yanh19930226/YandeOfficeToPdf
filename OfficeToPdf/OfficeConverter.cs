@@ -22,6 +22,7 @@ namespace OfficeToPdf
 
         private bool SaveToFile(byte[] sourceBuffer, string path)
         {
+            logger.Info($"源文件保存路劲:{path}");
             try
             {
                 logger.Info($"stream.length:{sourceBuffer.Length}");
@@ -44,9 +45,11 @@ namespace OfficeToPdf
 
         private FileInfo UploadFile(string path,string destName)
         {
-            if (!File.Exists(path))
+            if (!File.Exists(path)) {
+                logger.Log(LogLevel.Info, "---------------文件不存在------------------");
                 return null;
-
+            }
+            logger.Log(LogLevel.Info, "---------------将pdf文件上传到mongodb------------------");
             byte[] bytes = null;
             using (FileStream fileStream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read))
             {
@@ -55,7 +58,21 @@ namespace OfficeToPdf
             }
 
             Stream stream = new MemoryStream(bytes);
-            return fileOperation.AddFile(stream, destName, true);
+
+            logger.Log(LogLevel.Info, "---------------转流成功------------------");
+            FileInfo fileInfo = new FileInfo();
+            try
+            {
+                logger.Log(LogLevel.Info, $"----------------上传参数destName:{destName},fileStream长度:{stream.Length}-----------------");
+
+                fileInfo = fileOperation.AddFile(stream, destName, false);
+            }
+            catch (Exception ex)
+            {
+                logger.Log(LogLevel.Info, $"---------------{ex.Message}------------------");
+            }
+
+            return fileInfo;
         }
 
         private bool AddAttachmentAssociate(string fileId, string destFileId)
@@ -176,9 +193,11 @@ namespace OfficeToPdf
                 string filename = officeMessage.FileInfo.FileId;
                 string extension = System.IO.Path.GetExtension(officeMessage.FileInfo.FileName);
 
-                sourcePath = System.IO.Path.Combine(Directory.GetCurrentDirectory(), filename + extension);
-                destPath = System.IO.Path.Combine(Directory.GetCurrentDirectory(), string.Format("{0}.pdf", filename));
-
+                sourcePath = System.IO.Path.Combine(Directory.GetCurrentDirectory()+"/files", filename + extension);
+                destPath = System.IO.Path.Combine(Directory.GetCurrentDirectory() + "/files", filename+".pdf");
+                //目标文件夹路径
+                var destDirectoryPath = Directory.GetCurrentDirectory() + "/files";
+                
                 logger.Log(LogLevel.Info, $"文件原路径：{sourcePath}");
                 logger.Log(LogLevel.Info, $"文件目标路径：{destPath}");
                 if (extension != null && (extension.Equals(".xlsx", StringComparison.OrdinalIgnoreCase) ||
@@ -198,10 +217,10 @@ namespace OfficeToPdf
 
                 var psi = new ProcessStartInfo(
                         "libreoffice7.3",
-                        string.Format("--invisible --convert-to pdf  {0}", filename + extension))
+                        string.Format("--invisible --convert-to pdf  {0} --outdir {1}", sourcePath, destDirectoryPath))
                     {RedirectStandardOutput = true};
 
-                // 启动
+                //启动
                 var proc = Process.Start(psi);
                 if (proc == null)
                 {
@@ -221,7 +240,6 @@ namespace OfficeToPdf
                         proc.Kill();
                     }
                 }
-
                 logger.Log(LogLevel.Info, "文件转成完成");
             }
             catch (Exception ex)
@@ -231,17 +249,27 @@ namespace OfficeToPdf
             }
             finally
             {
+                logger.Error($"Finally DestPath:{destPath}");
+
                 if (File.Exists(destPath))
                 {
                     var destFileInfo = UploadFile(destPath,
                         string.Format("{0}.pdf", Path.GetFileNameWithoutExtension(officeMessage.FileInfo.FileName)));
 
-                    var empty = destFileInfo == null || string.IsNullOrEmpty(destFileInfo.FileId);
-                    string result = empty
-                        ? $"文件{officeMessage.FileInfo.FileName}[{officeMessage.FileInfo.FileId}],转目标pdf文件失败.."
-                        : $"文件{officeMessage.FileInfo.FileName}[{officeMessage.FileInfo.FileId}],转目标pdf文件[{destFileInfo.FileId}]成功..";
+                    logger.Log(LogLevel.Info, $"---------------MongoDB返回文件信息:{destFileInfo.FileId}------------------");
 
-                    logger.Log(LogLevel.Info, result);
+                    var empty = destFileInfo == null || string.IsNullOrEmpty(destFileInfo.FileId);
+
+                    logger.Log(LogLevel.Info, $"---------------MongoDB返回文件信息{empty.ToString()}------------------");
+
+                    if (empty)
+                    {
+                        logger.Log(LogLevel.Info, $"文件{officeMessage.FileInfo.FileName}[{officeMessage.FileInfo.FileId}],转目标pdf文件失败..");
+                    }
+                    else
+                    {
+                        logger.Log(LogLevel.Info, $"文件{officeMessage.FileInfo.FileName}[{officeMessage.FileInfo.FileId}],转目标pdf文件[{destFileInfo.FileId}]成功..");
+                    }
 
                     if (!empty)
                     {
@@ -257,9 +285,11 @@ namespace OfficeToPdf
                 }
 
                 if (File.Exists(sourcePath))
+                    logger.Log(LogLevel.Info, $"---------------删除sourcePath:{sourcePath}------------------");
                     System.IO.File.Delete(sourcePath);
 
                 if (File.Exists(destPath))
+                    logger.Log(LogLevel.Info, $"---------------删除destPath:{destPath}------------------");
                     System.IO.File.Delete(destPath);
             }
 

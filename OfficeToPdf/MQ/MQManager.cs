@@ -3,6 +3,10 @@ using RabbitMQ.Client.Events;
 using System;
 using System.Collections.Generic;
 using System.Collections.Concurrent;
+using System.Text.Json;
+using Newtonsoft.Json;
+using System.Text;
+using System.Linq;
 
 namespace OfficeToPdf
 {
@@ -156,8 +160,8 @@ namespace OfficeToPdf
             consumer.Received += (model, ea) =>
             {
                 var body = ea.Body;
-                var obj = Convertor.ByteArrayToObject(body, true);
-                var msg = obj as T;
+                var msg = JsonConvert.DeserializeObject<T>(Encoding.UTF8.GetString(body.ToArray()));
+
                 try
                 {
                     if (msg.Queues != _exchangeQueue[queueInfo.ExchangeName])
@@ -213,10 +217,8 @@ namespace OfficeToPdf
             consumer.Received += (model, ea) =>
             {
                 var body = ea.Body;
-                //var msgStr = SerializeExtension.DeserializeUtf8(body);
-                //var msg = msgStr.FromJson<T>();
-                var obj = Convertor.ByteArrayToObject(body, true);
-                var msg = obj as T;
+                var msg = JsonConvert.DeserializeObject<T>(Encoding.UTF8.GetString(body.ToArray()));
+                
                 try
                 {
                     handler(msg);

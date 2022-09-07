@@ -6,6 +6,7 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 using System.Linq;
 using System.Configuration;
+using NLog;
 
 namespace OfficeToPdf
 {
@@ -14,9 +15,12 @@ namespace OfficeToPdf
         private  IMongoDatabase _db;
         private  int _chunkSize;
         private  GridFSBucket _gridFs;
-        
+        ILogger logger;
+
         public GridFSOperationManager()
         {
+            logger = LogManager.GetCurrentClassLogger();
+
             Init();
         }
         private void Init()
@@ -78,9 +82,18 @@ namespace OfficeToPdf
 
         private FileInfo AddFile(Stream fileStream, string fileName)
         {
+
+            logger.Log(LogLevel.Info, $"----------------进入方法-----------------");
+
             GridFSUploadOptions options = new GridFSUploadOptions();
-            options.ChunkSizeBytes = _chunkSize;
+            options.ChunkSizeBytes = 261120;
+
+            logger.Log(LogLevel.Info, $"----------------GridFSOperationManager上传参数fileName:{fileName},GridFSOperationManagerfileStream长度:{fileStream.Length}-----------------");
+
             ObjectId id = _gridFs.UploadFromStream(fileName, fileStream, options);
+
+            logger.Log(LogLevel.Info, $"----------------返回Id:{id}-----------------");
+
             var briefInfo = GetFileInfo(id.ToString());
 
             return briefInfo;
@@ -135,17 +148,25 @@ namespace OfficeToPdf
         {
             if (!isCheckExist)
             {
+                logger.Log(LogLevel.Info, $"----------------不检查是否存在直接上传-----------------");
                 return AddFile(fileStream, fileName);
             }
 
             var result = new FileInfo();
             byte[] bytes = StreamToBytes(fileStream);
-            //如果md5相同 着不需要再上传
+            logger.Log(LogLevel.Info, $"----------------bytes长度:{bytes.Length}-----------------");
+
+            //如果md5相同不需要再上传
             string md5 = GetMD5Hash(fileStream);
+            logger.Log(LogLevel.Info, $"----------------md5:{md5}-----------------");
             string id = IsExist(md5.ToLower());
+
             if (string.IsNullOrEmpty(id))
             {
                 var oldStream = BytesToStream(bytes);
+
+                logger.Log(LogLevel.Info, $"----------------上传参数fileName:{fileName},fileStream长度:{oldStream.Length}-----------------");
+
                 result = AddFile(oldStream, fileName);
             }
             else
