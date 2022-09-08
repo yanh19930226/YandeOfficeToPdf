@@ -23,6 +23,7 @@ namespace OfficeToPdf
 
             Init();
         }
+
         private void Init()
         {
             string hostName = EnvironmentHelper.GetEnvValue("MongoHostName");
@@ -78,7 +79,6 @@ namespace OfficeToPdf
                 throw new Exception("Can't find MongoHostName!!!",ex);
             }
         }
-
 
         private FileInfo AddFile(Stream fileStream, string fileName)
         {
@@ -209,6 +209,7 @@ namespace OfficeToPdf
             //return BytesToStream(fileByte);
             return GetStream(fileId);
         }
+
         public Stream GetStream(string fileId)
         {
             try
@@ -225,6 +226,7 @@ namespace OfficeToPdf
             }
 
         }
+
         public string GetFileName(string fileId)
         {
             ObjectId id = ObjectId.Parse(fileId);
@@ -253,7 +255,6 @@ namespace OfficeToPdf
             }
             return string.Empty;
         }
-
 
         public FileInfo GetFileInfo(string fileId)
         {
